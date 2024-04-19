@@ -1,0 +1,5 @@
+NUM_ROW = 6
+NUM_COL = 7
+PLAYERS = ["G", "R"]
+WIN_NUM = 4
+EMPTY_CELL = "_"
