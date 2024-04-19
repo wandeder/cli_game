@@ -3,6 +3,7 @@ from utils import WinGame, InvalidColumn, FullBoard
 
 
 class Board:
+    """Representig game board"""
     def __init__(self):
         self.row = NUM_ROW
         self.col = NUM_COL
@@ -31,6 +32,7 @@ class Board:
         raise InvalidColumn("Column is full, cannot drop a chip here")
 
     def check_win_cell(self, row: int, col: int, player: str) -> None:
+        """Check win conditional for all directions"""
         for delta_row, delta_col in self.delta:
             if self._check_win(row, col, delta_row, delta_col, player):
                 raise WinGame(f"Player {player} is win!")

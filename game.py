@@ -4,6 +4,7 @@ from utils import WinGame, InvalidColumn, FullBoard
 
 
 class Game:
+    """Representig game process"""
     def __init__(self):
         self.board = Board()
         self.players = PLAYERS
