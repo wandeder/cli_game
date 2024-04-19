@@ -1,4 +1,4 @@
-from constants import NUM_ROW, NUM_COL, EMPTY_CELL
+from constants import NUM_ROW, NUM_COL, EMPTY_CELL, WIN_NUM
 from utils import WinGame, InvalidColumn, FullBoard
 
 
@@ -8,6 +8,7 @@ class Board:
         self.row = NUM_ROW
         self.col = NUM_COL
         self.empty_cell = EMPTY_CELL
+        self.win_num = WIN_NUM
         self.board = self._get_empty_board()
         self.delta = [(0, 1), (0, -1), (1, 0), (-1, 0), (-1, 1), (1, -1), (1, 1), (-1, -1)]
 
@@ -38,7 +39,7 @@ class Board:
                 raise WinGame(f"Player {player} is win!")
 
     def _check_win(self, row: int, col: int, delta_row: int, delta_col: int, player:str):
-        for _ in range(3):
+        for _ in range(self.win_num -1):
             row += delta_row
             col += delta_col
             if (
