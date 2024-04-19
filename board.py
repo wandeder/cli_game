@@ -28,9 +28,9 @@ class Board:
             if self.board[row][col] == self.empty_cell:
                 self.board[row][col] = player
                 self.check_win_cell(row, col, player)
-                return
-
-        raise InvalidColumn("Column is full, cannot drop a chip here")
+                break
+        else:
+            raise InvalidColumn("Column is full, cannot drop a chip here")
 
     def check_win_cell(self, row: int, col: int, player: str) -> None:
         """Check win conditional for all directions"""
